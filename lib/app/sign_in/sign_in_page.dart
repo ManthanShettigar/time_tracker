@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:time_tracker/app/sign_in/sign_in_button.dart';
 
 class SignInPage extends StatelessWidget {
   @override
@@ -9,7 +10,7 @@ class SignInPage extends StatelessWidget {
         elevation: 2,
       ),
       body: _buildContent(),
-      backgroundColor: Colors.amber,
+      backgroundColor: Colors.white70,
     );
   }
 
@@ -25,27 +26,47 @@ class SignInPage extends StatelessWidget {
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 32, fontWeight: FontWeight.w600),
           ),
+          SizedBox(height: 48),
+          SignInButton(
+            color: Colors.white,
+            borderRadius: 8,
+            //TODO: Google auth
+            onPressed: () {},
+            text: 'Sign In With Google',
+            textColor: Colors.black,
+          ),
           SizedBox(height: 8),
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(
-                primary: Colors.white70,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(16)))),
-            child: Row(
-              children: [
-                Icon(Icons.facebook),
-                SizedBox(
-                  width: 80,
-                ),
-                Text(
-                  'Sign In With Google!',
-                  style: TextStyle(color: Colors.black, fontSize: 15),
-                )
-              ],
-            ),
-            onPressed: () {
-              print('button pressed');
-            },
+          SignInButton(
+            color: Color(0xff334D92),
+            borderRadius: 8,
+            //TODO: Google auth
+            onPressed: () {},
+            text: 'Sign In With Facebook',
+            textColor: Colors.white,
+          ),
+          SizedBox(height: 8),
+          SignInButton(
+            color: Colors.teal,
+            borderRadius: 8,
+            //TODO: Google auth
+            onPressed: () {},
+            text: 'Sign In With Email',
+            textColor: Colors.white,
+          ),
+          SizedBox(height: 8),
+          Text(
+            'OR',
+            textAlign: TextAlign.center,
+            style: TextStyle(color: Colors.black87, fontSize: 14),
+          ),
+          SizedBox(height: 8),
+          SignInButton(
+            color: Colors.lightBlue,
+            borderRadius: 8,
+            //TODO: Google auth
+            onPressed: () {},
+            text: 'Go Anonymous',
+            textColor: Colors.white,
           ),
         ],
       ),
