@@ -9,39 +9,46 @@ class SignInPage extends StatelessWidget {
         elevation: 2,
       ),
       body: _buildContent(),
+      backgroundColor: Colors.amber,
     );
   }
 
   Widget _buildContent() {
-    return Container(
-      color: Colors.yellow,
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Container(
-            color: Colors.orange,
-            child: SizedBox(
-              height: 100,
-              width: 100,
-            ),
+          Text(
+            'Sign In',
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 32, fontWeight: FontWeight.w600),
           ),
-          Container(
-            color: Colors.red,
-            child: SizedBox(
-              height: 100,
-              width: 100,
+          SizedBox(height: 8),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+                primary: Colors.white70,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(16)))),
+            child: Row(
+              children: [
+                Icon(Icons.facebook),
+                SizedBox(
+                  width: 80,
+                ),
+                Text(
+                  'Sign In With Google!',
+                  style: TextStyle(color: Colors.black, fontSize: 15),
+                )
+              ],
             ),
-          ),
-          Container(
-            color: Colors.blue,
-            child: SizedBox(
-              height: 100,
-              width: 100,
-            ),
+            onPressed: () {
+              print('button pressed');
+            },
           ),
         ],
       ),
     );
   }
 }
-//sd
