@@ -1,6 +1,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
 
-class Auth {
+abstract class AuthBase {
+  User? get currentUser;
+  Future<User?> signInAnonymously();
+  Future<void> signOut();
+}
+
+class Auth implements AuthBase{
   final _firebaseAuth = FirebaseAuth.instance;
   User? get currentUser => _firebaseAuth.currentUser;
   Future<User?> signInAnonymously() async {
@@ -12,3 +18,4 @@ class Auth {
     await _firebaseAuth.signOut();
   }
 }
+
