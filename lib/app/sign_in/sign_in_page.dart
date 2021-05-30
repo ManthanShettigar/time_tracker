@@ -7,8 +7,9 @@ class SignInPage extends StatelessWidget {
   
 
   const SignInPage({Key? key, required this.onSignIn}) : super(key: key);
+  //OnSignIn act as parameter of the SignInPage which takes an Arguement USer 
   final Function(User) onSignIn;
-
+  //SignIn as anonymous
   Future<void> _signInAnonymously() async {
     try {
       final userCredentials = await FirebaseAuth.instance.signInAnonymously();
